@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ObstaclesRace</string>
+    <string name="Sensor_Mode_Slow">Sensor Mode Slow</string>
+    <string name="Sensor_Mode_Fast">Sensor Mode Fast</string>
+    <string name="Fast_Button_Mode">Fast Button Mode</string>
+    <string name="Slow_Button_Mode">Slow Button Mode</string>
+    <string name="High_Score">High Score</string>
+
+    <string name="End_Game">End Game</string>
+    <string name="Return">Return</string>
+
+
 </resources>

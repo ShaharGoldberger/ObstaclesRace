@@ -3,5 +3,17 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#ABC1D3</color>
+    <color name="custom_pink">#FFC0CB</color>
+    <color name="lighter_pink">#FBD6DF</color>
+    <color name="pink_100">#F8BBD0</color>
+    <color name="yellow_100">#FFF9C4</color>
+    <color name="game_background">#C6BABA</color>
+
+    <color name="activities_backgrounds">#CFBDC1</color>
+
+
+
+
+
 
 </resources>

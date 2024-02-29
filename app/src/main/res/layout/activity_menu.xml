@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_gradient_background"
+    tools:context=".MenuActivity">
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/buttonSensorModeFast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Sensor_Mode_Fast"
+            android:layout_marginTop="@dimen/margin_default"/>
+        <Button
+            android:id="@+id/buttonSensorModeSlow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Sensor_Mode_Slow"
+            android:layout_marginTop="@dimen/margin_default"/>
+
+        <Button
+            android:id="@+id/buttonFastMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Fast_Button_Mode"
+            android:layout_marginTop="@dimen/margin_default"/>
+
+        <Button
+            android:id="@+id/buttonSlowMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Slow_Button_Mode"
+            android:layout_marginTop="@dimen/margin_default"/>
+
+        <Button
+            android:id="@+id/buttonHighScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/High_Score"
+            android:layout_marginTop="@dimen/margin_default"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

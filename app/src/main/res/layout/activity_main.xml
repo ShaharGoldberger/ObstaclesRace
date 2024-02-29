@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="ltr"
-    android:background="@color/blue"
+    android:background="@color/game_background"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -41,13 +41,53 @@
             app:srcCompat="@drawable/heart"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <LinearLayout
+        android:id="@+id/layout_coins_counter"
+        android:layout_width="@dimen/heart_layout_width"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/margin_default"
+        android:layout_marginStart="@dimen/margin_default"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/main_LBL_coinsCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$ "
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:textSize="@dimen/font_default_size"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_odometer"
+        android:layout_width="550dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="@dimen/margin_default"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_coins_counter">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/main_LBL_odometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Odometer: "
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_default_size"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:columnCount="3"
+        android:columnCount="5"
         android:translationY="-80dp"
-        android:rowCount="12"
+        android:rowCount="20"
         android:id="@+id/gameLayout"
         app:layout_constraintBottom_toBottomOf="@+id/main_RTL_buttonLayout"
         app:layout_constraintTop_toTopOf="parent" />
@@ -83,8 +123,6 @@
             android:layout_height="wrap_content"
             android:src="@drawable/right_button">
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -8,9 +8,23 @@ import java.util.Random;
 
 public class Obstacle extends Element {
 
-    public Obstacle(Context context) {
+    private int flag; //0 for stone, 1 for coin
+
+    public Obstacle(Context context, int flag) {
         super(new ImageView(context));
-        getElementImage().setImageResource(R.drawable.stone_obstacle);
+        setFlag(flag);
+    }
+
+    public int getFlag() {
+        return flag;
+    }
+
+    public void setFlag(int flag) {
+        this.flag = flag;
+        if(flag == 0)
+            getElementImage().setImageResource(R.drawable.stone_obstacle);
+        else
+            getElementImage().setImageResource(R.drawable.coin);
     }
 
     public void setRandomObstacle(Context context) {
