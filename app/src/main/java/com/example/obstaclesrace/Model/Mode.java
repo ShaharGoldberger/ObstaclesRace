@@ -10,10 +10,10 @@ public enum Mode {
         switch(this) {
             case SENSOR_FAST:
             case FAST:
-                return 2;
+                return 5;
             case SENSOR_SLOW:
             case SLOW:
-                return 1;
+                return 2;
             default:
                 throw new InvalidParameterException("Invalid game mode");
         }

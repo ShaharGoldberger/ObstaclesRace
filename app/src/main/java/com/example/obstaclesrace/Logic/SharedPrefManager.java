@@ -44,7 +44,6 @@ public class SharedPrefManager {
 
         }
         // Optionally sort scores in descending order
-         //scores.sort(Collections.reverseOrder())
         // Sort scores in descending order based on the compareTo method in Score
         Collections.sort(scores);
 

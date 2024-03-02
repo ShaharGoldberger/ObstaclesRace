@@ -54,6 +54,7 @@ public class GameManager {
     private GridLayout layout;
     private ImageView[] lives;
     private MaterialTextView coins;
+    private MaterialTextView main_LBL_odometer;
     private int[] obstacle_rows = new int[NUMBER_OF_TRACKS];
     private boolean[] active_obstacle_lanes = new boolean[NUMBER_OF_TRACKS];
     private int[] activationPeriods = new int[NUMBER_OF_TRACKS];
@@ -80,6 +81,7 @@ public class GameManager {
     public GameManager(
            Mode mode,
            GridLayout layout, ImageView[] lives, MaterialTextView coins,
+           MaterialTextView main_LBL_odometer,
            RunOnMain mainRunner) {
         sounds = new GameSound(layout.getContext());
         matrix = new Element[NUMBER_OF_ROWS][NUMBER_OF_TRACKS];
@@ -92,6 +94,7 @@ public class GameManager {
         this.coinsCounter =0;
         this.odometer = 0;
         this.activity = activity;
+        this.main_LBL_odometer =main_LBL_odometer;
         //this.scoresForTableScores = new ArrayList<>();
        obstacles = new Obstacle[NUMBER_OF_TRACKS];
         int lotteryResult;
@@ -151,6 +154,7 @@ public class GameManager {
                    }
                }
                periodCounter[0]++;
+               updateOdometer();
            });
        }, 0, (int) (1000 / mode.obstacleSpawnDelay()), TimeUnit.MILLISECONDS);
    }
@@ -184,15 +188,6 @@ public class GameManager {
         Element temp  = matrix[obstacle_rows[lane]][lane];
         if(matrix[obstacle_rows[lane] + 1][lane] instanceof Car) {
             resetObstacle(lane);
-
-            // hit --> vibrate + toast
-            //sounds.crash();
-            //SingletonPattern.getInstance(null).vibrate(500); // Vibrate for 500 milliseconds
-            //SingletonPattern.getInstance(null).toastAndVibrate("Hit!!!!");
-            //life--;
-            //if(life == 0)
-              //  resetLives();
-            //renderLife();
             collision((Obstacle) matrix[0][lane]);
             setRandomObstacle((Obstacle) temp);
             return false;
@@ -275,7 +270,9 @@ public class GameManager {
     public void updateOdometer(){
         if(this.life != 0){
             odometer+= STEP;
+            main_LBL_odometer.setText("Odometer: " + odometer);
         }
+
     }
 
     private void setRandomObstacle(Obstacle o){

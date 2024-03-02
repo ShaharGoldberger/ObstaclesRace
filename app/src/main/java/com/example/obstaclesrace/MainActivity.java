@@ -55,9 +55,10 @@ public class MainActivity extends AppCompatActivity
     private SimpleLocation simpleLocation;
     private Mode mode;
 
+
     private final Runnable odometerRunnable = new Runnable() {
         public void run() {
-            gameManager.updateOdometer();
+            //gameManager.updateOdometer();
             refreshUI();
             handler.postDelayed(this, 2000); // Schedule the next update after 1000ms
         }
@@ -115,6 +116,7 @@ public class MainActivity extends AppCompatActivity
                 findViewById(R.id.main_IMG_heart3)
                 },
                 findViewById(R.id.main_LBL_coinsCounter),
+                findViewById(R.id.main_LBL_odometer),
                 this);
 
         SingletonPattern.getInstance(this); // Initialize the singleton here
@@ -138,7 +140,7 @@ public class MainActivity extends AppCompatActivity
 
     //in the next task
     private void refreshUI() {
-        main_LBL_coinsCounter.setText("$ " + gameManager.getCoinsCounter() );
+        //main_LBL_coinsCounter.setText("$ " + gameManager.getCoinsCounter() );
         main_LBL_odometer.setText("Odometer: " + gameManager.getOdometer());
     }
 
