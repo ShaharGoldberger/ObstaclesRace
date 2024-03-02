@@ -45,6 +45,7 @@ public class SharedPrefManager {
         }
         // Optionally sort scores in descending order
         // Sort scores in descending order based on the compareTo method in Score
+
         Collections.sort(scores);
 
         // Keep only the top 10 scores
@@ -60,18 +61,6 @@ public class SharedPrefManager {
 
 
     public ArrayList<Score> getScoresFromPreferences() {
-        //String scoresJson = sp.getString("gameScores", null);
-        //ArrayList<Score> scores = new ArrayList<>();
-        //if (scoresJson != null) {
-          //  Gson g = new Gson();
-            //Set<String> scoresStrings = sp.getStringSet("gameScores", new HashSet<>());
-            //for(String scoreString : scoresStrings) {
-              //  scores.add(g.fromJson(scoreString, Score.class));
-            //}
-        //}
-        //return scores;
-
-
         ArrayList<Score> scores = new ArrayList<>();
         String scoresJson = sp.getString("gameScores", null); // Correctly retrieve the JSON string
         if (scoresJson != null) {
