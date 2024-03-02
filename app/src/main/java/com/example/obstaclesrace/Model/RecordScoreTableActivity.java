@@ -8,6 +8,7 @@ import android.os.Bundle;
 import com.example.obstaclesrace.Adapters.ScoreAdapter;
 import com.example.obstaclesrace.R;
 import com.example.obstaclesrace.ScoreListFragment;
+
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -38,6 +39,7 @@ public class RecordScoreTableActivity extends AppCompatActivity
 
     }
 
+
     private void zoom(double latitude, double longitude) {
         CameraPosition cameraPosition = new CameraPosition.Builder()
                 .target(new LatLng(latitude,longitude))
@@ -46,6 +48,7 @@ public class RecordScoreTableActivity extends AppCompatActivity
         CameraUpdate update = CameraUpdateFactory.newCameraPosition(cameraPosition);
         googleMap.animateCamera(update);
     }
+
     @Override
     public void onScoreClicked(Score score) {
         if(googleMap != null) {
@@ -57,4 +60,10 @@ public class RecordScoreTableActivity extends AppCompatActivity
     public void onMapReady(@NonNull GoogleMap googleMap) {
         this.googleMap = googleMap;
     }
+
+
+
+
+
+
 }

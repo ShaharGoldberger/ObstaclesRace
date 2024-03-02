@@ -15,6 +15,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.obstaclesrace.Model.RecordScoreTableActivity;
+import com.google.android.gms.maps.model.LatLng;
+
+import im.delight.android.location.SimpleLocation;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -22,6 +25,8 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonFastMode;
     private Button buttonSlowMode;
     private Button buttonHighScore;
+    private static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,11 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         buttonFastMode.setOnClickListener(this);
         buttonSlowMode.setOnClickListener(this);
         buttonHighScore.setOnClickListener(this);
+
+        this.requestPermissions(new String[]{"android.permission.ACCESS_FINE_LOCATION"},
+                MY_PERMISSIONS_REQUEST_LOCATION);
+        //SimpleLocation simpleLocation = new SimpleLocation(this);
+        //new LatLng(simpleLocation.getLatitude(),simpleLocation.getLongitude());
     }
 
     private void findView() {
@@ -73,44 +83,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        /*
-        //Intent intent = null;
-        Intent intent = new Intent(this, MainActivity.class);
-        Bundle bundle = new Bundle();
-        String mode = "";
-        if(v == buttonSensorModeSlow) {
-            intent = new Intent(this, MainActivity.class);
-            mode  = "Sensor Slow";
-            bundle.putString(MODE_ARG, "SENSOR_SLOW");
-        }
-        else if(v == buttonSensorModeFast) {
-            intent = new Intent(this, MainActivity.class);
-            bundle.putString(MODE_ARG, "SENSOR_FAST");
-            mode  = "Sensor fast";
-        }
-        else if(v == buttonFastMode) {
-            intent = new Intent(this, MainActivity.class);
-            bundle.putString(MODE_ARG, "FAST");
-            mode  = "Fast";
-        }
-        else if(v== buttonSlowMode) {
-            intent = new Intent(this, MainActivity.class);
-            bundle.putString(MODE_ARG, "SLOW");
-            mode  = "Slow";
-        }
-        else if(v == buttonHighScore) {
-            intent = new Intent(this, RecordScoreTableActivity.class);
-        }
-        if(intent!=null) {
-            if (!mode.isEmpty()) {
-                askNameDialogAndMove(mode, intent);
-            } else {
-                intent.putExtras(bundle);
-                startActivity(intent);
-            }
-        }
-*/
-
         Intent intent = new Intent(this, MainActivity.class);
         String mode = null;
 
